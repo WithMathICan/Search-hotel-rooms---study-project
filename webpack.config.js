@@ -17,19 +17,19 @@ const cssOptions = [
 const scssOptions = [...cssOptions, { loader: 'sass-loader', options: { sourceMap: true } }]
 
 const config = {
-    entry : {
-        main : './src/main.js'
+    entry: {
+        main: './src/main.js'
     },
     output: {
         filename: isProd ? '[name].[contenthash].bundle.js' : '[name].bundle.js',
-        path: __dirname +'/dist',
+        path: __dirname + '/dist',
         publicPath: ''
     },
     resolve: {
         extensions: ['.js'],
     },
-    module : {
-        rules : [
+    module: {
+        rules: [
             {
                 test: /\.pug$/,
                 use: ['html-loader', 'pug-html-loader']
@@ -40,7 +40,7 @@ const config = {
             },
         ]
     },
-    plugins : [
+    plugins: [
         new MiniCssExtractPlugin({ filename: isProd ? '[name].[contenthash].css' : '[name].css' }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
@@ -54,7 +54,25 @@ const config = {
         //     template: './src/main.pug',
         //     // inject: false
         // }),
-    ]
+    ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'public'),
+        },
+        compress: true,
+        port: 9000,
+        client: {
+            reconnect: true,
+        },
+        hot: true,
+        watchFiles: {
+            paths: ['src/**/*', 'dist/**/*'],
+            options: {
+                usePolling: false,
+            },
+        },
+        historyApiFallback: true,
+    },
 }
 
 module.exports = config

@@ -18,7 +18,8 @@ const scssOptions = [...cssOptions, { loader: 'sass-loader', options: { sourceMa
 
 const config = {
     entry: {
-        main: './src/main.js'
+        main: './src/main.js',
+        colors: './src/colors.js'
     },
     output: {
         filename: isProd ? '[name].[contenthash].bundle.js' : '[name].bundle.js',
@@ -38,22 +39,36 @@ const config = {
                 test: /\.scss$/,
                 use: scssOptions
             },
+            // {
+            //     test: /\.(woff(2)?|ttf)(\?v=\d+\.\d+\.\d+)?$/,
+            //     use: [
+            //         {
+            //             loader: 'file-loader',
+            //             options: {
+            //                 name: '[name].[ext]',
+            //                 outputPath: 'fonts/'
+            //             }
+            //         }
+            //     ]
+            // },
+            { 
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+                use: ['url-loader?limit=100000'] 
+            }
         ]
     },
     plugins: [
         new MiniCssExtractPlugin({ filename: isProd ? '[name].[contenthash].css' : '[name].css' }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Main',
             template: 'src/main.pug',
             filename: 'main.html',
             // inject: false
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/colors.pug',
+            filename: 'colors.html',
         })
-        // new HtmlWebpackPlugin({
-        //     filename: 'main.html',
-        //     template: './src/main.pug',
-        //     // inject: false
-        // }),
     ],
     devServer: {
         static: {

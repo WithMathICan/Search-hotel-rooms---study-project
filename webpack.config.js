@@ -17,14 +17,11 @@ const cssOptions = [
 const scssOptions = [...cssOptions, { loader: 'sass-loader', options: { sourceMap: true } }]
 
 const config = {
-    entry: {
-        main: './src/main.js',
-        colors: './src/colors.js'
-    },
+    entry: isProd ? './src/script-prod.js' : './src/script-dev.js',
     output: {
-        filename: isProd ? '[name].[contenthash].bundle.js' : '[name].bundle.js',
+        filename: 'bundle.js',
         path: __dirname + '/dist',
-        publicPath: ''
+        publicPath:  ''
     },
     resolve: {
         extensions: ['.js'],
@@ -39,18 +36,6 @@ const config = {
                 test: /\.scss$/,
                 use: scssOptions
             },
-            // {
-            //     test: /\.(woff(2)?|ttf)(\?v=\d+\.\d+\.\d+)?$/,
-            //     use: [
-            //         {
-            //             loader: 'file-loader',
-            //             options: {
-            //                 name: '[name].[ext]',
-            //                 outputPath: 'fonts/'
-            //             }
-            //         }
-            //     ]
-            // },
             { 
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
                 type: 'asset/resource' 
@@ -58,23 +43,24 @@ const config = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({ filename: isProd ? '[name].[contenthash].css' : '[name].css' }),
+        new MiniCssExtractPlugin({ filename: 'main.css' }),
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            template: 'src/main.pug',
-            filename: 'main.html',
-            // inject: false
-        }),
         new HtmlWebpackPlugin({
             template: 'src/colors.pug',
             filename: 'colors.html',
+            // hash : isProd
+            // inject: false
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/form-elements.pug',
+            filename: 'form-elemets.html',
         })
     ],
     devServer: {
         static: {
             directory: path.join(__dirname, 'public'),
         },
-        compress: true,
+        compress: false,
         port: 9000,
         client: {
             reconnect: true,

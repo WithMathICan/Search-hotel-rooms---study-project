@@ -1,0 +1,22 @@
+include ./components/text-field/text-field.pug
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- link(rel="stylesheet", href="/dist/form-elements.css")
+        title Form Elements
+    body 
+        header.header 
+            img(src = "images/Vector.svg" alt="Logo")
+        .container 
+            .elements-container_3 
+                +text_field({title: 'Text field'})
+            .elements-container_3 
+            .elements-container_3 
+        .container 
+            .elements-container_3 
+            .elements-container_3 
+            .elements-container_3

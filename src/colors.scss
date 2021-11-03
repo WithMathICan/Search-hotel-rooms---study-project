@@ -1,1 +1,31 @@
 @import './core/all';
+@import './components/demo-color/demo-color';
+
+.header{
+    padding: 30px;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.colors, .type{
+    flex-basis: 50%;
+}
+
+.type{
+    max-width: 430px;
+}
+
+.type__wrapper{
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    column-gap: 30px;
+    margin-bottom: 40px;
+}
+
+.type__title{
+    text-align: right;
+}

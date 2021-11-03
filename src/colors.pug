@@ -1,3 +1,5 @@
+include ./components/demo-color/demo-color.pug
+
 doctype html
 html(lang="en")
     head
@@ -6,4 +8,27 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body 
-        h1.text-h1 This one is the sub-section or widget title
+        header.header 
+            img(src = "images/Vector.svg" alt="Logo")
+        .container 
+            div.colors
+                +demo_color({title : 'Dark Shade 100%', color : '#1F2041', class : 'bg-dark-100'})
+                +demo_color({title : 'Dark Shade 75%', color : '#1F2041', class : 'bg-dark-75'})
+                +demo_color({title : 'Dark Shade 50%', color : '#1F2041', class : 'bg-dark-50'})
+                +demo_color({title : 'Dark Shade 25%', color : '#1F2041', class : 'bg-dark-25'})
+                +demo_color({title : 'Dark Shade 5%', color : '#1F2041', class : 'bg-dark-5'})
+                +demo_color({title : 'Purple', color : '#BC9CFF', class : 'bg-purple'})
+                +demo_color({title : 'Green', color : '#6FCF97', class : 'bg-green'})
+            div.type
+                .type__wrapper.text-h1
+                    .type__title.text-dark-25.fw-400 H1
+                    .type__text This one is the sub-section or widget title
+                .type__wrapper.text-h2
+                    .type__title.text-dark-25.fw-400 H2
+                    .type__text Next one is the item title inside widgets
+                .type__wrapper.text-h3
+                    .type__title.text-dark-25.fw-400 H3
+                    .type__text.tt-up This is a label or CTA text
+                .type__wrapper.text-body
+                    .type__title.text-dark-25 Body
+                    .type__text This is the body text which is used for most of the design, like paragraphs, lists, etc.

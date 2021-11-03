@@ -1,0 +1,88 @@
+.text-h1{
+    font-family: $font-family;
+    font-size: 24px; 
+    line-height: 29.26px;
+    color: $color-dark-100;
+    font-weight: 700;
+}
+
+.text-h2{
+    font-family: $font-family;
+    font-size: 19px; 
+    line-height: 23.16px;
+    color: $color-dark-100;
+    font-weight: 700;
+}
+
+.text-h3{
+    font-family: $font-family;
+    font-size: 12px; 
+    line-height: 14.63px;
+    color: $color-dark-100;
+    font-weight: 700;
+}
+
+.text-body{
+    font-family: $font-family;
+    font-size: 14px; 
+    line-height: 24px;
+    color: $color-dark-75;
+    font-weight: 400;
+}
+
+.fw-700{
+    font-weight: 700;
+}
+.fw-400{
+    font-weight: 400;
+}
+
+.text-dark-100{
+    color: $color-dark-100;
+}
+.text-dark-75{
+    color: $color-dark-75;
+}
+.text-dark-50{
+    color: $color-dark-50;
+}
+.text-dark-25{
+    color: $color-dark-25;
+}
+.text-dark-5{
+    color: $color-dark-5;
+}
+.text-purple{
+    color : $color-purple;
+}
+.text-green{
+    color: $color-green;
+}
+
+.bg-dark-100{
+    background: $color-dark-100;
+}
+
+.bg-dark-75{
+    background: $color-dark-75;
+}
+
+.bg-dark-50{
+    background: $color-dark-50;
+}
+.bg-dark-25{
+    background: $color-dark-25;
+}
+.bg-dark-5{
+    background: $color-dark-5;
+}
+.bg-purple{
+    background : $color-purple;
+}
+.bg-green{
+    background: $color-green;
+}
+
+.tt-up{
+    text-transform: uppercase;
+}

@@ -1,21 +1,25 @@
 @font-face {
-  font-family: "Montserrat";
-  src: url("fonts/Montserrat-Regular.woff2"), url("fonts/Montserrat-Regular.woff"), url("fonts/Montserrat-Regular.ttf");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-Regular.woff2"), url("fonts/Montserrat-Regular.woff"), url("fonts/Montserrat-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("fonts/Montserrat-Italic.woff2"), url("fonts/Montserrat-Italic.woff"), url("fonts/Montserrat-Italic.ttf");
-  font-weight: 400;
-  font-style: italic;
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-Italic.woff2"), url("fonts/Montserrat-Italic.woff"), url("fonts/Montserrat-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
 }
-
-$font-family: "Montserrat", sans-serif;
-
-.text-h1{
-    font-family: $font-family;
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-Bold.woff2"), url("fonts/Montserrat-Bold.woff"), url("fonts/Montserrat-Bold.ttf");
     font-weight: 700;
-    font-size: 24px; 
-    line-height: 30px;
+    font-style: normal;
 }
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-BoldItalic.woff2"), url("fonts/Montserrat-BoldItalic.woff"), url("fonts/Montserrat-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: italic;
+}
+

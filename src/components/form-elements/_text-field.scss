@@ -1,0 +1,151 @@
+@mixin empty-input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+@mixin text-input{
+    display: block;
+    width: 100%;
+    
+
+    font-size: 14px;
+    line-height: 18px;
+    background: white;
+
+    margin-top: 4px;
+    padding: 12px;
+
+    transition: all 0.5s;
+}
+
+.text-field{
+    @include empty-input();
+    @include text-input();
+
+    color: $color-dark-25;
+    border-radius: 4px;
+    border: 1px solid $color-dark-25;
+
+    &:hover, &:focus{
+        border: 1px solid $color-dark-50;
+        color: $color-dark-75;
+    }
+}
+
+.dropdown-guests{
+    input{
+        @include empty-input();
+        @include text-input();
+    
+        border: 1px solid $color-dark-25;
+        color: $color-dark-75;
+        border-radius: 4px;
+        padding-right: 44px;
+    }
+    position: relative;
+
+    &__icon{
+        content: '';
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+    &__icon-subscription{
+        top: 14px;
+        right: 12px;
+    }
+}
+
+
+.dropdown-bed{
+    input{
+        @include empty-input();
+        @include text-input();
+        border: 1px solid $color-dark-50;
+    
+        color: $color-dark-75;
+        padding-right: 44px;
+        border-radius: 4px 4px 0 0;
+    }
+
+    // position: relative;
+
+    &__content{
+        border: 1px solid $color-dark-50;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        padding-bottom: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        transform: translate(0, 100%);
+
+        opacity: 0;
+
+        transition: all .5s
+    }
+
+    &__input{
+        position: relative;
+    }
+    // width: 100%;
+    
+    &__icon{
+        content: '';
+        position: absolute;
+        top: 36px;
+        right: 16px;
+    }
+
+    &:hover{
+        .dropdown-bed__content{
+            // display: block;
+            opacity: 1;
+        }
+    }
+}
+
+.dropdown-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 6px 0px 14px;
+
+    &__button{
+        width: 30px;
+        height: 30px;
+        border: 1px $color-dark-50 solid;
+        color: $color-dark-50;
+        display: block;
+        border-radius: 50%;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    &__actions{
+        display: flex;
+        align-items: center;
+    }
+    &__number{
+        // padding: 0 14px;
+        width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.dropdown-item__button_disabled{
+    border: 1px $color-dark-25 solid;
+    color: $color-dark-25;
+}
+
+
+
+

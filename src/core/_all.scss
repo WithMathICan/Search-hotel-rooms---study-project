@@ -3,3 +3,7 @@
 @import './fonts';
 @import './typography';
 
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+

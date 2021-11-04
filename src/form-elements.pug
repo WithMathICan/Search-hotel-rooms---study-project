@@ -1,4 +1,4 @@
-include ./components/text-field/text-field.pug
+include ./components/form-elements/form-elements.pug
 
 doctype html
 html(lang="en")
@@ -13,7 +13,30 @@ html(lang="en")
             img(src = "images/Vector.svg" alt="Logo")
         .container 
             .elements-container_3 
-                +text_field({title: 'Text field'})
+                .mb-input 
+                    +text_field({title: 'Text field', placeholder: 'Placeholder'})
+                .mb-input
+                    +dropdown_guests({title : 'Dropdown guests'})
+                .mb-input 
+                    +text_field({title: 'Masked Text field', placeholder: 'ДД.ММ.ГГГГ'})
+                .mb-input
+                    .date-dropdown-wrapper
+                        +dropdown_guests({title : 'Date Dropdown', value : "ДД.ММ.ГГГГ"})
+                        +dropdown_guests({title : 'Date Dropdown', value : "19.08.2019"})
+                .mb-input.mw-dropdowns
+                    +dropdown_guests({title : 'Filter Date Dropdown', value : "19 авг. - 23 авг."})
+                .mb-input.mw-dropdowns
+                    +subscription_field({title: 'Subscription text field', placeholder: 'Email'})
+                //- .mb-input
+                //-     +dropdown_bed({title : 'Dropdown guests'})
+                .mb-input.mw-dropdowns
+                    +dropdown_bed({title : 'Dropdown', value: '2 спальни, 2 кровати...'})
+                //- select.text-field
+                //-     option Пункт 1
+                //-     option Пункт 2
+                //-     option Пункт 2
+                //-     option Пункт 2
+                //-     option Пункт 2
             .elements-container_3 
             .elements-container_3 
         .container 

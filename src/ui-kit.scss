@@ -1,5 +1,6 @@
 @import './core/all';
 @import './components/demo-color/demo-color';
+@import './components/all';
 
 .header{
     padding: 30px;
@@ -10,10 +11,13 @@
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
+    padding: 20px;
 }
 
 .elements-container_3{
     flex-basis: 33.33%;
+    // border : 1px solid #444;
+    padding: 5px;
 }
 
 .colors, .type{
@@ -33,4 +37,18 @@
 
 .type__title{
     text-align: right;
+}
+
+.mb-input{
+    margin-bottom: 18px;
+}
+
+.mw-dropdowns{
+    max-width: 265px;
+}
+
+.date-dropdown-wrapper{
+    display: grid;
+    grid-template-columns: 150px 150px;
+    column-gap: 20px;
 }

@@ -57,7 +57,7 @@ const config = {
         })
     ],
     devServer: {
-        static: {
+        static: { 
             directory: path.join(__dirname, 'public'),
         },
         compress: false,

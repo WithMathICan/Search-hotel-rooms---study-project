@@ -1,0 +1,58 @@
+mixin text_field({title, value='', placeholder=''})
+
+    label.text-h3 #{title}
+        input.text-field(type="text" value=value placeholder=placeholder)
+
+
+mixin dropdown_guests({title, value='Сколько гостей'})
+
+    label.text-h3 #{title}
+        .dropdown-guests
+            .dropdown-guests__icon 
+                img(src="images/expand_more.svg" width="13" height="8")
+            input(type="text" value=value)
+
+
+mixin subscription_field({title, value='', placeholder='Email'})
+
+    label.text-h3 #{title}
+        .dropdown-guests
+            .dropdown-guests__icon.dropdown-guests__icon-subscription
+                img(src="images/arrow_forward.svg" width="18" height="18")
+            input(type="text" value=value placeholder=placeholder)
+
+
+mixin dropdown_bed({title, value='Сколько гостей', isExpaned= false})
+    .dropdown-bed
+        .dropdown-bed__input
+            label.dropdown-bed__label.text-h3 #{title}
+                .dropdown-bed__icon 
+                    img(src="images/expand_more.svg" width="13" height="8")
+                input.cursor-pointer(type="text" value=value)
+            .dropdown-bed__content
+                .dropdown-bed__item.dropdown-item.text-h3
+                    .dropdown-item__title спальни
+                    .dropdown-item__actions 
+                        span.dropdown-item__button.fw-400 &ndash;
+                        span.dropdown-item__number 2
+                        span.dropdown-item__button.fw-400 +
+                .dropdown-bed__item.dropdown-item.text-h3
+                    .dropdown-item__title кровати
+                    .dropdown-item__actions 
+                        span.dropdown-item__button.fw-400 &ndash;
+                        span.dropdown-item__number 21
+                        span.dropdown-item__button.fw-400 +
+                .dropdown-bed__item.dropdown-item.text-h3
+                    .dropdown-item__title ванные комнаты
+                    .dropdown-item__actions 
+                        span.dropdown-item__button.fw-400.dropdown-item__button_disabled &ndash;
+                        span.dropdown-item__number 0
+                        span.dropdown-item__button.fw-400 +
+
+
+            
+
+
+
+
+

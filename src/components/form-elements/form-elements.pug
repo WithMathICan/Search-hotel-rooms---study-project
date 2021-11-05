@@ -49,6 +49,24 @@ mixin dropdown_bed({title, value='Сколько гостей', isExpaned= false
                         span.dropdown-item__number 0
                         span.dropdown-item__button.fw-400 +
 
+mixin check_box({title, value='', disabled=false, checked=false})
+
+    label.check-box 
+        input(type="checkbox" value=value disabled=disabled checked=checked)
+        span.text-body.text-dark-50  #{title}
+
+mixin radio_button({title, value='', name='', disabled=false, checked=false})
+
+    label.radio-button 
+        input(type="radio" value=value disabled=disabled checked=checked name=name)
+        span.text-body.text-dark-50  #{title}
+
+mixin toggle_button({title='', disabled=false, checked=false})
+
+    label.toggle-button 
+        input(type="checkbox" disabled=disabled checked=checked)
+        span.text-body.text-dark-50  #{title}
+
 
             
 

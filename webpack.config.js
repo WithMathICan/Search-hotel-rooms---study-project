@@ -52,7 +52,7 @@ const config = {
             // inject: false
         }),
         new HtmlWebpackPlugin({
-            template: 'src/form-elements.pug',
+            template: 'src/form-elements-page.pug',
             filename: 'form-elemets.html',
         })
     ],

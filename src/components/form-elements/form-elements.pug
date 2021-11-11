@@ -67,6 +67,17 @@ mixin toggle_button({title='', disabled=false, checked=false})
         input(type="checkbox" disabled=disabled checked=checked)
         span.text-body.text-dark-50  #{title}
 
+mixin like_button({count=0, active=false})
+
+    .like-button(class=active ? 'like-button_active' : '')
+        .like-button__icon
+        .like-button__number #{count}
+
+mixin rate_buttons({rate=5})
+
+    .rate-buttons 
+        
+
 
             
 

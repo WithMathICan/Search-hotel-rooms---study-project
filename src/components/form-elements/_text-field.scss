@@ -24,7 +24,7 @@
     @include empty-input();
     @include text-input();
 
-    color: $color-dark-25;
+    color: $color-dark-50;
     border-radius: 4px;
     border: 1px solid $color-dark-25;
 
@@ -34,43 +34,41 @@
     }
 }
 
-.dropdown-guests{
-    input{
-        @include empty-input();
-        @include text-input();
-    
-        border: 1px solid $color-dark-25;
-        color: $color-dark-75;
-        border-radius: 4px;
-        padding-right: 44px;
-    }
+.text-field-subscription, .text-field-dropdown{
     position: relative;
+    display: block;
+    width: 100%;
 
-    &__icon{
-        content: '';
-        position: absolute;
-        top: 16px;
-        right: 16px;
+    .text-field{
+        padding-right: 40px;
     }
-    &__icon-subscription{
-        top: 14px;
-        right: 12px;
+
+    span{
+        // content: '';
+        position: absolute;
+        bottom: 22px;
+        right: 10px;
+        transform: translate(0,50%);
+        display: flex;
+        align-items: center;
+        svg{
+            fill: $color-dark-50; 
+            transition: all .5s;
+        }
+    }
+
+    &:hover{
+        span svg{
+            fill: #BC9CFF;
+        }
     }
 }
 
-
-.dropdown-bed{
+.text-field-dropdown{
     input{
-        @include empty-input();
-        @include text-input();
-        border: 1px solid $color-dark-50;
-    
-        color: $color-dark-75;
-        padding-right: 44px;
         border-radius: 4px 4px 0 0;
+        user-select: none;
     }
-
-    // position: relative;
 
     &__content{
         border: 1px solid $color-dark-50;
@@ -83,27 +81,16 @@
         width: 100%;
         transform: translate(0, 100%);
 
-        opacity: 0;
+        display: none;
+        z-index: -1;
 
         transition: all .5s
     }
 
-    &__input{
-        position: relative;
-    }
-    // width: 100%;
-    
-    &__icon{
-        content: '';
-        position: absolute;
-        top: 36px;
-        right: 16px;
-    }
-
     &:hover{
-        .dropdown-bed__content{
-            // display: block;
-            opacity: 1;
+        .text-field-dropdown__content{
+            display: block;
+            z-index: 10;
         }
     }
 }
@@ -113,6 +100,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 6px 6px 0px 14px;
+    user-select: none;
+
+    &__actions{
+        display: flex;
+        align-items: center;
+    }
 
     &__button{
         width: 30px;
@@ -127,12 +120,8 @@
         justify-content: center;
         cursor: pointer;
     }
-    &__actions{
-        display: flex;
-        align-items: center;
-    }
+    
     &__number{
-        // padding: 0 14px;
         width: 32px;
         display: flex;
         align-items: center;
@@ -144,4 +133,83 @@
     border: 1px $color-dark-25 solid;
     color: $color-dark-25;
 }
+
+// .dropdown-guests{
+//     input{
+//         @include empty-input();
+//         @include text-input();
+    
+//         border: 1px solid $color-dark-25;
+//         color: $color-dark-75;
+//         border-radius: 4px;
+//         padding-right: 44px;
+//     }
+//     position: relative;
+
+//     &__icon{
+//         content: '';
+//         position: absolute;
+//         top: 16px;
+//         right: 16px;
+//     }
+//     &__icon-subscription{
+//         top: 14px;
+//         right: 12px;
+//     }
+// }
+
+
+// .dropdown-bed{
+//     input{
+//         @include empty-input();
+//         @include text-input();
+//         border: 1px solid $color-dark-50;
+    
+//         color: $color-dark-75;
+//         padding-right: 44px;
+//         border-radius: 4px 4px 0 0;
+//     }
+
+//     // position: relative;
+
+//     &__content{
+//         border: 1px solid $color-dark-50;
+//         border-top: none;
+//         border-radius: 0 0 4px 4px;
+//         padding-bottom: 10px;
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         width: 100%;
+//         transform: translate(0, 100%);
+
+//         // opacity: 0;
+//         display: none;
+//         z-index: -1;
+
+//         transition: all .5s
+//     }
+
+//     &__input{
+//         position: relative;
+//     }
+//     // width: 100%;
+    
+//     &__icon{
+//         content: '';
+//         position: absolute;
+//         top: 36px;
+//         right: 16px;
+//     }
+
+//     &:hover{
+//         .dropdown-bed__content{
+//             display: block;
+//             // opacity: 1;
+//             z-index: 10;
+//         }
+//     }
+// }
+
+
 

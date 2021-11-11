@@ -12,6 +12,7 @@
     margin: 0 auto;
     display: flex;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 .elements-container_3{
@@ -19,6 +20,10 @@
     // border : 1px solid #444;
     padding: 5px;
     margin: 0 20px 0 20px;
+
+    @media screen and (max-width: 900px) {
+        flex-basis: 100%;
+    }
 }
 
 .colors, .type{

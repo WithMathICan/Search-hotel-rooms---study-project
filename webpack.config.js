@@ -48,13 +48,14 @@ const config = {
         new HtmlWebpackPlugin({
             template: 'src/colors.pug',
             filename: 'colors.html',
-            // hash : isProd
+            hash : isProd
             // inject: false
         }),
         new HtmlWebpackPlugin({
             template: 'src/form-elements-page.pug',
-            filename: 'form-elemets.html',
-        })
+            filename: 'form-elements.html',
+            hash : isProd,
+        }),
     ],
     devServer: {
         static: { 

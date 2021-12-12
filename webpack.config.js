@@ -36,6 +36,10 @@ const config = {
                 test: /\.scss$/,
                 use: scssOptions
             },
+            {
+                test: /\.css$/,
+                use: cssOptions
+            },
             { 
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
                 type: 'asset/resource' 

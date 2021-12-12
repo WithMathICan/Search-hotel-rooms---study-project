@@ -8,7 +8,7 @@
     "dev1": "webpack --watch --mode development",
     "dev": "webpack serve --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "serve" : "serve dist"
+    "serve": "serve dist"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/WithMathICan/Search-hotel-rooms---study-project#readme",
   "dependencies": {
+    "air-datepicker": "^3.0.1",
     "autoprefixer": "^10.4.0",
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",

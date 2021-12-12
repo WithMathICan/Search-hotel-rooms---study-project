@@ -35,39 +35,50 @@ html(lang="en")
                 //-     +dropdown_bed({title : 'Dropdown', value: '2 спальни, 2 кровати...'})
                 
             .elements-container_3 
-                //- .mb-input
-                //-     .text-h3 Checkbox buttons
-                //- .mb-input.mw-dropdowns
-                //-     +check_box({title: 'Можно с питомцами'})
-                //-     +check_box({title: 'Можно с питомцами'})
-                //-     +check_box({title: 'Без труда не выловишь и рыбку из пруда.'})
-                //-     +check_box({title: 'Можно с питомцами'})
-                //-     +check_box({title: 'Можно с питомцами'})
-                //-     +check_box({title: 'Можно с питомцами 2', disabled: true})
-                //-     +check_box({title: 'Можно с питомцами', checked : true})
-                //-     +check_box({title: 'Можно с питомцами 2', disabled: true, checked : true})
-                //- .mb-input
-                //-     .text-h3 Radio buttons
-                //- .mb-input
-                //-     +radio_button({title: 'Мужчина', name: 'animal'})
-                //-     +radio_button({title: 'Женщина', name: 'animal'})
-                //- .mb-input
-                //-     +radio_button({title: 'Можно с питомцами 3', name: 'animal', disabled: true})
-                //-     +radio_button({title: 'Без труда не выловишь и рыбку из пруда.', name: 'animal'})
-                //- .mb-input 
-                //-     .text-h3 Toggle button
-                //- .mb-input 
-                //-     +toggle_button({title : 'Получать спецпредложения'})
-                //-     +toggle_button({title : 'Получать спецпредложения', disabled: true})
-                //- .mb-input 
-                //-     .text-h3 Like button
-                //- .mb-input 
-                //-     +like_button({count: 5})
-                //-     span(style="padding: 10px")
-                //-     +like_button({count: 5, active: true})
-                //- .mb-input 
-                //-     .text-h3 Rate button
+                .mb-input
+                    .text-h3 Checkbox buttons
+                .mb-input.mw-dropdowns
+                    +check_box({title: 'Можно с питомцами'})
+                    +check_box({title: 'Можно с питомцами'})
+                    +check_box({title: 'Без труда не выловишь и рыбку из пруда.'})
+                    +check_box({title: 'Можно с питомцами'})
+                    +check_box({title: 'Можно с питомцами'})
+                    +check_box({title: 'Можно с питомцами 2', disabled: true})
+                    +check_box({title: 'Можно с питомцами', checked : true})
+                    +check_box({title: 'Можно с питомцами 2', disabled: true, checked : true})
+                .mb-input
+                    .text-h3 Radio buttons
+                .mb-input
+                    +radio_button({title: 'Мужчина', name: 'animal'})
+                    +radio_button({title: 'Женщина', name: 'animal'})
+                .mb-input
+                    +radio_button({title: 'Можно с питомцами 3', name: 'animal', disabled: true})
+                    +radio_button({title: 'Без труда не выловишь и рыбку из пруда.', name: 'animal'})
+                .mb-input 
+                    .text-h3 Toggle button
+                .mb-input 
+                    +toggle_button({title : 'Получать спецпредложения'})
+                    +toggle_button({title : 'Получать спецпредложения', disabled: true})
+                .mb-input 
+                    .text-h3 Like button
+                .mb-input 
+                    +like_button({count: 5})
+                    span(style="padding: 10px")
+                    +like_button({count: 5, active: true})
+                .mb-input 
+                    .text-h3 Rate buttons
+                .mb-input 
+                    div
+                        +rate_buttons({id_prefix: '1', name: "r1"})(data-rate=3)
+                    div
+                        +rate_buttons({id_prefix: '2', name: "r2"})(data-rate=4)
+                    div
+                        +rate_buttons({id_prefix: '3', name: "r3"})(data-rate=1)
             .elements-container_3 
+                .mb-input 
+                    .text-h3 Range slider
+                .mb-input 
+                    +rage_slider()
         .container 
             .elements-container_3 
             .elements-container_3 

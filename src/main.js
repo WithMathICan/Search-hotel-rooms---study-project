@@ -1,14 +1,31 @@
-import $ from 'jquery'
-import IMask from 'imask';
+import { setMaskedDateFields } from "./js/masked-date"
+import AirDatepicker from 'air-datepicker';
+import 'air-datepicker/air-datepicker.css';
 
-$(function () {
-    setMaskedDateFields()
-})
 
-function setMaskedDateFields(){
-    let els = document.querySelectorAll('.text-field_masket_date')
-    for (let el of els){
-        IMask(el, {mask: Date, min: new Date(1990, 0, 1), max: new Date(2020, 0, 1)});
-    }
+(function () {
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        setMaskedDateFields()
+        activateLikeButton()
+        setDatePickerSimple()
+    })
+
+    
+
+})()
+
+function activateLikeButton() {
+    document.querySelectorAll('.like-button').forEach(el => {
+        el.addEventListener('click', e => {
+            el.classList.toggle('like-button_active')
+        })
+    })
 }
 
+function setDatePickerSimple(){
+    document.querySelectorAll('.text-field_masket_date').forEach(el => {
+        new AirDatepicker(el)
+    })
+}

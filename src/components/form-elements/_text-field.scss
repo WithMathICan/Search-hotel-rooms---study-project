@@ -80,6 +80,7 @@
         left: 0;
         width: 100%;
         transform: translate(0, 100%);
+        background: #fff;
 
         display: none;
         z-index: -1;
@@ -91,6 +92,16 @@
         .text-field-dropdown__content{
             display: block;
             z-index: 10;
+        }
+        .text-field{
+            border: 1px solid $color-dark-50;
+            color: $color-dark-75;
+        }
+
+        span{
+            svg{
+                transform: rotateX(180deg);
+            }
         }
     }
 }

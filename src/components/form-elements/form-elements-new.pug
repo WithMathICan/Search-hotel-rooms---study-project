@@ -40,3 +40,48 @@ mixin dropdown_bedrooms({title, value, placeholder=''})
                     .dropdown-item__button.fw-400.dropdown-item__button_disabled &ndash;
                     .dropdown-item__number 0
                     .dropdown-item__button.fw-400 +
+
+mixin check_box({title, value='', disabled=false, checked=false})
+    label.check-box 
+        input(type="checkbox" value=value disabled=disabled checked=checked)
+        span.text-body.text-dark-50  #{title}
+
+mixin radio_button({title, value='', name='', disabled=false, checked=false})
+    label.radio-button 
+        input(type="radio" value=value disabled=disabled checked=checked name=name)
+        span.text-body.text-dark-50  #{title}
+
+mixin toggle_button({title='', disabled=false, checked=false})
+    label.toggle-button 
+        input(type="checkbox" disabled=disabled checked=checked)
+        span.text-body.text-dark-50  #{title}
+
+mixin like_button({count=0, active=false})
+    .like-button(class=active ? 'like-button_active' : '')
+        .like-button__icon
+        .like-button__number #{count}
+
+mixin rate_buttons_bad()
+    .rate-buttons 
+        stan.rate-buttons__star.rate-buttons__star_active
+        span.rate-buttons__star
+        span.rate-buttons__star
+        span.rate-buttons__star
+        span.rate-buttons__star
+
+mixin rate_buttons({id_prefix, name})
+    .rate-buttons 
+        each i in [5,4,3,2,1]
+            input(id=`rate-${id_prefix}-${i}` type="radio" name=name value=i checked=(attributes['data-rate'] == i))
+            label(for=`rate-${id_prefix}-${i}`) 
+
+mixin rage_slider_single()
+    .range-slider-container
+        input.range-slider(type="range" min=1 max=100 value=50)
+
+mixin rage_slider()
+    .range-slider-container
+        .range-slider-track
+        .range-slider-track-cover
+        input.range-slider#slide1(type="range" min=1 max=100 value=30)
+        input.range-slider#slide2(type="range" min=1 max=100 value=70)
